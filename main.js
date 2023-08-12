@@ -1,83 +1,69 @@
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
-import 'owl.carousel';
+const sliders = document.querySelectorAll(".swiper");
 
-// Initialisez le carrousel
-$('.owl-carousel').owlCarousel({
-  // Options du carrousel
-    items:1,
+sliders.forEach(function(slider) {
+  let swiperInstance = null; // Stocke l'instance Swiper pour chaque slider
 
-});
+  if (slider.classList.contains("verti")) {
+
+    let x = slider.classList.contains("timer1") ? 2700 : 3500;
+    swiperInstance = new Swiper(slider, {
+      direction: 'vertical',
+      loop: true,
+      mousewheel: true,
+      draggable: false,
+      allowTouchMove: true,
+      autoplay: {
+                
+          delay: x,},
 
 
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+      },
+    });} 
+    
+    else {
+      let x = slider.classList.contains("timer1") ? 4700 : 6000;
+    swiperInstance = new Swiper(slider, {
+      direction: 'horizontal',
+      loop: true,
+      mousewheel: true,
+      draggable: false,
+      allowTouchMove: false,
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+      },
+      autoplay: {
+        delay: x,
+      },
 
-
-
-
-
-const images = document.querySelectorAll('.container img');
-
-    images.forEach(image => {
-        image.addEventListener('click', () => {
-            const overlay = document.createElement('div');
-            overlay.classList.add('overlay');
-
-            const overlayImage = document.createElement('img');
-            overlayImage.src = image.src;
-            overlayImage.classList.add('overlay-image');
-
-            overlay.appendChild(overlayImage);
-            document.body.appendChild(overlay);
-
-            overlay.addEventListener('click', () => {
-                document.body.removeChild(overlay);
-            });
-        });
     });
 
 
+}
 
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
+  slider.swiperInstance = swiperInstance; // Stocke l'instance dans une propriété personnalisée
 
-const server = http.createServer((req, res) => {
-  const filePath = path.join(__dirname, req.url === '/' ? 'index.html' : req.url);
-  const contentType = getContentType(filePath);
+  slider.addEventListener("click", function() {
+    slider.classList.toggle("focus");
 
-  fs.readFile(filePath, (err, content) => {
-    if (err) {
-      res.writeHead(404);
-      res.end('File not found');
-    } else {
-      res.writeHead(200, { 'Content-Type': contentType });
-      res.end(content);
-    }
+    const images = slider.querySelectorAll("img");
+    images.forEach(function(image) {
+      image.classList.toggle("focusimg");
+    });
   });
 });
 
-const PORT = process.env.PORT || 3000;
-
-server.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
-
-function getContentType(filePath) {
-  const extname = path.extname(filePath);
-  switch (extname) {
-    case '.html':
-      return 'text/html';
-    case '.css':
-      return 'text/css';
-    case '.js':
-      return 'text/javascript';
-    default:
-      return 'application/octet-stream';
-  }
-}
 
 
+    
+    
+  
 
+   
+  
 
 
 

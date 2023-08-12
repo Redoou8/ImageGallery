@@ -6,20 +6,19 @@ html, body{margin: 0;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(8, 1fr);
  
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
   margin: 0;
   padding: 0;}
   
   
-  .ZONE2 { grid-area: 1 / 4 / 2 / 8; 
+  .ZONE2 { grid-area: 1 / 5 / 2 / 8; 
             display: flex;
             border: solid 2px rgb(252, 252, 252);
-            padding-right: 5%;
-            padding-left: 30%;
-            justify-content: end;
-            text-align: end;
-            font-size: calc(2vw + 2vh);
+           text-align: center;
+           justify-content: center;
+           align-items: center;
+            font-size: calc(1.8vw + 1.8vh);
 
             
   }
@@ -32,7 +31,7 @@ html, body{margin: 0;
   
   .ZONE4 { grid-area: 4 / 1 / 5 / 3; 
             
-            display: flex;
+            display:flex;
             align-items: center;
             justify-content: center;
             text-align: center;
@@ -47,7 +46,7 @@ html, body{margin: 0;
             border: solid 1px rgb(255, 255, 255);
 }
   
-.ZONE6 { grid-area: 2 / 7 / 6 / 8; 
+.ZONE6 { grid-area: 2 / 7 / 7 / 8; 
             
             display: flex;
             border: solid 1px white;
@@ -72,52 +71,78 @@ html, body{margin: 0;
 }
   
   .ZONE1 { grid-area: 1 / 1 / 5 / 4; 
-           
-         display: flex;
+          
+         display: flex; 
          border: solid 1px white;
+         
 }
-       
-        
-
-
+.ZONE0 { grid-area: 1 / 4 / 4 / 5;  
+           
+  display: flex;
+  border: solid 1px white;
+}
 
 img{
     height: 100%;
     width: 100%;
-    max-height: 100%;
+    object-fit: cover;
+    
     
     }
- 
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        cursor: pointer;
-        overflow: hidden;
 
-    }
-    
-    .overlay-image {
-        max-width: 80%;
-        max-height: 80vh;
-        object-fit: contain;
-    }
 
 
     .ZONE1:hover,
-    .ZONE3 img:hover,
-    .ZONE5 img:hover,
-    .ZONE6 img:hover,
-    .ZONE7 img:hover,
-    .ZONE8 img:hover,
-    .ZONE9 img:hover {
-      z-index: 10;
+    .ZONE3:hover,
+    .ZONE5:hover,
+    .ZONE6:hover,
+    .ZONE7:hover,
+    .ZONE8:hover,
+    .ZONE9:hover {
+      z-index: 11;
     }
 
+    
+      
+
+    
+    .swiper {
+      margin-left: auto;
+      margin-right: auto;
+      background-color: rgb(255, 255, 255);
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+
+    .focus{
+      
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      cursor: pointer;
+      overflow: hidden;
+        
+    }   
+
+    .focusimg{
+      
+      object-fit: contain; /* ou "cover" selon l'effet souhaité */
+      
+
+    }
+
+    .swiper-slide{
+      position: relative;
+      display: flex;
+      background: none;
+      
+
+    }
+
+    
