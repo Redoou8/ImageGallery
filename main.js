@@ -5,7 +5,7 @@ sliders.forEach(function(slider) {
 
   if (slider.classList.contains("verti")) {
 
-    let x = slider.classList.contains("timer1") ? 2700 : 3500;
+    let x = slider.classList.contains("timer1") ? 3000 : 4500;
     swiperInstance = new Swiper(slider, {
       direction: 'vertical',
       loop: true,
@@ -24,7 +24,7 @@ sliders.forEach(function(slider) {
     });} 
     
     else {
-      let x = slider.classList.contains("timer1") ? 4700 : 6000;
+      let x = slider.classList.contains("timer1") ? 3700 : 6000;
     swiperInstance = new Swiper(slider, {
       direction: 'horizontal',
       loop: true,
