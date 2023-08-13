@@ -15,7 +15,8 @@ sliders.forEach(function(slider) {
       autoplay: {
                 
           delay: x,},
-
+          spaceBetween: 10, // Ajustez cette valeur en fonction de vos besoins
+          slidesPerView: 'auto', // Ajustez cette valeur en fonction de vos besoins
 
       pagination: {
         el: '.swiper-pagination',
@@ -31,6 +32,8 @@ sliders.forEach(function(slider) {
       mousewheel: true,
       draggable: false,
       allowTouchMove: false,
+      spaceBetween: 10, // Ajustez cette valeur en fonction de vos besoins
+  slidesPerView: 'auto', // Ajustez cette valeur en fonction de vos besoins
       pagination: {
         el: '.swiper-pagination',
         dynamicBullets: true,
