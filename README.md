@@ -1,1 +1,1 @@
-Image Gallery prototype, with eventlisteners, sliders and onhover.
+Image Gallery prototype using SLIDERJS
